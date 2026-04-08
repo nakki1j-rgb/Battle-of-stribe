@@ -107,7 +107,7 @@ function renderPool() {
   const keyword = searchBox.value.toLowerCase();
   const typeVal = filterType.value;
   const tribeVal = filterTribe.value;
-  const setVal = filterSet.value; // ★追加
+  const setVal = filterSet.value; 
   const costVal = parseInt(filterCost.value);
   const pMin = parseInt(filterPowerMin.value) || 0;
   const pMax = parseInt(filterPowerMax.value) || 999999;
@@ -115,9 +115,7 @@ function renderPool() {
   const filtered = cardDatabase.filter(card => {
     const matchKeyword = card.name.includes(keyword) || card.effect.includes(keyword);
     const matchType = typeVal === "" || card.type === typeVal;
-    // 複合種族に対応
     const matchTribe = tribeVal === "" || card.tribe.includes(tribeVal);
-    // ★弾数の判定
     const matchSet = setVal === "" || card.set === setVal;
     const matchCost = isNaN(costVal) || card.cost === costVal;
     const matchPower = card.power >= pMin && card.power <= pMax;
@@ -137,7 +135,7 @@ function renderPool() {
           <span class="card-name">${card.name} ${badges}</span>
           <span class="card-cost">コスト: ${card.cost}</span>
         </div>
-        <div class="card-tags">種類: ${card.type} | 種族: ${card.tribe} | 弾数: ${card.set}</div>
+        <div class="card-tags">種類: ${card.type} | 種族: ${card.tribe} | 弾数: ${card.set} | パワー: ${card.power > 0 ? card.power : '-'}</div>
         <div class="card-effect">${card.effect}</div>
         <div class="card-actions"><button onclick="addCard(${card.id})">追加</button></div>
       </div>
