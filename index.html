@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle of Stribeデッキメーカー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Battle of Stribeデッキメーカー</h1>
+    <div id="user-area">
+      <div id="login-screen">
+        <input type="text" id="username-input" placeholder="ユーザー名を入力">
+        <button id="login-btn">ログイン</button>
+      </div>
+      <div id="welcome-screen" style="display: none;">
+        <span id="user-greeting"></span>
+        <button id="logout-btn">ログアウト</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" style="display: none;">
+    
+    <section id="saved-decks-area">
+      <h2>マイデッキ一覧</h2>
+      <div id="saved-decks-list"></div>
+    </section>
+
+    <section id="deck-area">
+      <h2>デッキ作成・編集</h2>
+      <div id="deck-status">
+        <p>枚数: <span id="card-count">0</span> / 40枚</p>
+        <p>ユニーク: <span id="unique-status">未設定 (必須)</span></p>
+        <p id="completion-message" class="incomplete">デッキ未完成です</p>
+      </div>
+      
+      <div id="deck-list" class="vertical-list"></div>
+      
+      <div class="deck-save-box">
+        <input type="text" id="deck-name-input" placeholder="デッキ名を入力">
+        <button id="save-deck-btn" disabled>このデッキを保存する</button>
+      </div>
+      <button id="clear-deck-btn">作成中のデッキをリセット</button>
+    </section>
+
+    <section id="search-area">
+      <h2>カードを探す</h2>
+      <input type="text" id="search-box" placeholder="カード名や効果で検索...">
+      
+      <div class="filters" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+        <select id="filter-type" style="padding: 8px; border-radius: 4px; flex: 1; min-width: 100px;">
+          <option value="">すべての種類</option>
+          <option value="モンスター">モンスター</option>
+          <option value="呪文">呪文</option>
+          <option value="装具">装具</option>
+        </select>
+        
+        <select id="filter-tribe" style="padding: 8px; border-radius: 4px; flex: 1; min-width: 100px;">
+          <option value="">すべての種族</option>
+          <option value="魚">魚</option><option value="皇帝主">皇帝主</option><option value="悪魔">悪魔</option>
+          <option value="天使">天使</option><option value="ナイト">ナイト</option><option value="雷人">雷人</option>
+          <option value="フォレスター">フォレスター</option><option value="スピードノイザー">スピードノイザー</option>
+          <option value="ドラゴン">ドラゴン</option><option value="スピリッツ">スピリッツ</option>
+          <option value="精霊">精霊</option><option value="精霊使い">精霊使い</option><option value="神">神</option>
+          <option value="改造龍機">改造龍機</option><option value="マジシャン">マジシャン</option>
+          <option value="-">種族なし(-)</option>
+        </select>
+
+        <select id="filter-set" style="padding: 8px; border-radius: 4px; flex: 1; min-width: 100px;">
+          <option value="">すべての弾</option>
+          <option value="第1弾">第1弾</option>
+          <option value="第2弾">第2弾</option>
+          <option value="第3弾">第3弾</option>
+          <option value="第4弾">第4弾</option>
+        </select>
+      </div>
+
+      <div class="numeric-filters" style="display: flex; gap: 10px; margin-bottom: 10px; align-items: center; font-size: 0.85rem;">
+        <div>コスト: <input type="number" id="filter-cost" placeholder="1-99" style="width: 50px; padding: 5px;"></div>
+        <div style="flex-grow: 1;">
+          パワー: <input type="number" id="filter-power-min" placeholder="最小" style="width: 60px; padding: 5px;"> 
+          〜 <input type="number" id="filter-power-max" placeholder="最大" style="width: 60px; padding: 5px;">
+        </div>
+      </div>
+    </section>
+    
+    <section id="card-pool"></section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

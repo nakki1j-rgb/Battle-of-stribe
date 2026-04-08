@@ -1,0 +1,44 @@
+/* 基本設定 */
+body { font-family: sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; color: #333; }
+header { background-color: #2c3e50; color: white; text-align: center; padding: 10px 0; }
+main { padding: 10px; max-width: 600px; margin: 0 auto; }
+h2 { font-size: 1.2rem; border-bottom: 2px solid #3498db; padding-bottom: 5px; }
+
+/* ログインエリア */
+#user-area { margin-top: 10px; font-size: 0.9rem; }
+#username-input { padding: 5px; border-radius: 4px; border: none; }
+
+/* 各種エリア */
+#deck-area, #saved-decks-area { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+#deck-status p { margin: 5px 0; font-weight: bold; }
+.incomplete { color: #e74c3c; } .complete { color: #27ae60; }
+#search-box { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+
+/* カードのデザインと画像（新機能！） */
+.card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 10px; display: flex; gap: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.card-image-box { width: 80px; flex-shrink: 0; }
+.card-img { width: 100%; height: auto; border-radius: 4px; border: 1px solid #ccc; }
+.card-info { flex-grow: 1; display: flex; flex-direction: column; }
+.card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #ccc; padding-bottom: 5px; margin-bottom: 5px; }
+.card-name { font-weight: bold; font-size: 1rem; }
+.card-cost { background: #3498db; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem;}
+.card-tags { font-size: 0.75rem; color: #666; margin-bottom: 5px; }
+.card-effect { font-size: 0.85rem; margin-bottom: 5px; flex-grow: 1; }
+
+.badge-unique { background: #f1c40f; color: #000; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; font-weight: bold;}
+.badge-evol { background: #9b59b6; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;}
+
+/* ボタン類 */
+.card-actions { display: flex; justify-content: flex-end; }
+button { padding: 6px 12px; border: none; border-radius: 4px; background-color: #3498db; color: white; font-weight: bold; cursor: pointer; }
+button:disabled { background-color: #bdc3c7; cursor: not-allowed; }
+.btn-remove { background-color: #e74c3c; }
+#clear-deck-btn { width: 100%; background-color: #7f8c8d; margin-top: 10px; }
+
+/* デッキ保存エリア */
+.deck-save-box { margin-top: 15px; padding-top: 15px; border-top: 2px solid #eee; display: flex; flex-direction: column; gap: 10px;}
+#deck-name-input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+#save-deck-btn { background-color: #f39c12; padding: 10px; font-size: 1rem; }
+
+/* 保存済みデッキのリスト */
+.saved-deck-item { background: #ecf0f1; padding: 10px; border-radius: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;}
