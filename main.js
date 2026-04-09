@@ -114,7 +114,18 @@ function renderPool() {
 
   const filtered = cardDatabase.filter(card => {
     const matchKeyword = card.name.includes(keyword) || card.effect.includes(keyword);
-    const matchType = typeVal === "" || card.type === typeVal;
+    
+    // ▼ ここから変更：選ばれた項目によってチェックする場所を変える！
+    let matchType = false;
+    if (typeVal === "") {
+      matchType = true; // 「すべての種類」なら全部OK
+    } else if (typeVal === "ユニーク") {
+      matchType = card.unique === true; // 「ユニーク」ならuniqueがtrueのカードだけOK
+    } else {
+      matchType = card.type === typeVal; // 「モンスター」「呪文」などなら通常のtypeチェック
+    }
+    // ▲ ここまで変更
+
     const matchTribe = tribeVal === "" || card.tribe.includes(tribeVal);
     const matchSet = setVal === "" || card.set === setVal;
     const matchCost = isNaN(costVal) || card.cost === costVal;
@@ -122,6 +133,8 @@ function renderPool() {
 
     return matchKeyword && matchType && matchTribe && matchSet && matchCost && matchPower;
   });
+
+  // ...(以下、poolEl.innerHTML = ''; などはそのままです)...
 
   poolEl.innerHTML = '';
   filtered.forEach(card => {
