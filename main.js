@@ -1,11 +1,11 @@
 // 1. カードデータ（全40種、すべて第1弾に設定）
 const cardDatabase = [
-  { id: 1, name: "エナジーボール", cost: 3, tribe: "-", power: 0, effect: "・エナジーから1枚を選んで墓地に置きカードを2枚引く。", evol: false, unique: false, type: "呪文", set: "第1弾", image: "images/energy_ball.jpg" },
-  { id: 2, name: "メルト・パンチ", cost: 7, tribe: "-", power: 0, effect: "・カウンター3<br>・場にあるモンスター1体を破壊する。", evol: false, unique: false, type: "呪文", set: "第1弾", image: "images/melt_punch.jpg" },
-  { id: 3, name: "デカクラクション", cost: 5, tribe: "-", power: 0, effect: "・カウンター2<br>・手札を1枚捨てる。<br>・場のコスト5以下のモンスターを1体選び破壊する。", evol: false, unique: false, type: "呪文", set: "第1弾", image: "images/bighorn.jpg" },
-  { id: 4, name: "墓起こし", cost: 5, tribe: "-", power: 0, effect: "・自分の墓地のモンスターを1枚選び手札に加える。", evol: false, unique: false, type: "呪文", set: "第1弾", image: "images/grave_exhumation.jpg" },
-  { id: 5, name: "電線復帰", cost: 4, tribe: "-", power: 0, effect: "・自分の墓地のカードを1枚選びエナジー化させる。", evol: false, unique: false, type: "呪文", set: "第1弾", image: "images/power_restored.jpg" },
-  { id: 6, name: "王家の宝箱", cost: 6, tribe: "-", power: 0, effect: "・カウンター2<br>・カードを3枚引く。", evol: false, unique: false, type: "呪文", set: "第1弾", image: "images/the_royal_chest.jpg" },
+  { id: 1, name: "エナジーボール", cost: 3, tribe: "-", power: 0, effect: "・エナジーから1枚を選んで墓地に置きカードを2枚引く。", evol: false, unique: false, type: "魔法", set: "第1弾", image: "images/energy_ball.jpg" },
+  { id: 2, name: "メルト・パンチ", cost: 7, tribe: "-", power: 0, effect: "・カウンター3<br>・場にあるモンスター1体を破壊する。", evol: false, unique: false, type: "魔法", set: "第1弾", image: "images/melt_punch.jpg" },
+  { id: 3, name: "デカクラクション", cost: 5, tribe: "-", power: 0, effect: "・カウンター2<br>・手札を1枚捨てる。<br>・場のコスト5以下のモンスターを1体選び破壊する。", evol: false, unique: false, type: "魔法", set: "第1弾", image: "images/bighorn.jpg" },
+  { id: 4, name: "墓起こし", cost: 5, tribe: "-", power: 0, effect: "・自分の墓地のモンスターを1枚選び手札に加える。", evol: false, unique: false, type: "魔法", set: "第1弾", image: "images/grave_exhumation.jpg" },
+  { id: 5, name: "電線復帰", cost: 4, tribe: "-", power: 0, effect: "・自分の墓地のカードを1枚選びエナジー化させる。", evol: false, unique: false, type: "魔法", set: "第1弾", image: "images/power_restored.jpg" },
+  { id: 6, name: "王家の宝箱", cost: 6, tribe: "-", power: 0, effect: "・カウンター2<br>・カードを3枚引く。", evol: false, unique: false, type: "魔法", set: "第1弾", image: "images/the_royal_chest.jpg" },
   { id: 7, name: "セモタレエビ", cost: 3, tribe: "魚", power: 1000, effect: "・登場時、山札の上から2枚を見る。そのあと山札の上と下にそれぞれ1枚ずつ戻す。", evol: false, unique: false, type: "モンスター", set: "第1弾", image: "images/semotare_shrimp.jpg" },
   { id: 8, name: "トンカチヘッド・シャーク", cost: 5, tribe: "魚", power: 7000, effect: "・カウンター3<br>・自分のモンスターがバトルに勝った時、このモンスターは手札に戻る。", evol: false, unique: false, type: "モンスター", set: "第1弾", image: "images/hammerhead_shark.jpg" },
   { id: 9, name: "大海覇者 メガロエンペラー", cost: 9, tribe: "魚/皇帝主", power: 8000, effect: "・ツインアタッカー<br>・登場時、次のうちどちらかを選ぶ。<br>▶相手のモンスターを1体破壊する。<br>▶相手の手札を2枚まで破壊する。<br>・攻撃時、自分のエナジーを1枚選び手札に戻す。", evol: false, unique: false, type: "モンスター", set: "第1弾", image: "images/Megal Emperor.jpg" },
@@ -33,12 +33,12 @@ const cardDatabase = [
   { id: 31, name: "精霊の伝い手 フエセプス", cost: 9, tribe: "精霊使い", power: 4000, effect: "・登場時、山札の上から1枚をシールドに追加する。場に他の「精霊」カードがあれば、更にもう1枚追加する。", evol: false, unique: false, type: "モンスター", set: "第1弾", image: "images/Fueseps the Spirit Messenger.jpg" },
   { id: 32, name: "精霊の守り手 ディフィシウス", cost: 5, tribe: "精霊使い", power: 3000, effect: "・カウンター3<br>・ガードナー<br>・このモンスターは攻撃できない。", evol: false, unique: false, type: "モンスター", set: "第1弾", image: "images/Deficius Guardian of the Spirits.jpg" },
   { id: 33, name: "精霊の担い手 ギセウス", cost: 4, tribe: "精霊使い", power: 2000, effect: "・登場時、「精霊」カード1枚を破壊してもよい。そうしたら相手は自分のモンスターを1体選び破壊する。", evol: false, unique: false, type: "モンスター", set: "第1弾", image: "images/Giseus_the Spirit Bearer.jpg" },
-  { id: 34, name: "精霊神話「第1章―光あれ」", cost: 2, tribe: "-", power: 0, effect: "・山札の上から2枚を表向きにする。その中から「種族：精霊」を全て手札に加え、残りを好きな順で山札の下に戻す。", evol: false, unique: false, type: "呪文", set: "第1弾", image: "images/Spirit Mythology1.jpg" },
+  { id: 34, name: "精霊神話「第1章―光あれ」", cost: 2, tribe: "-", power: 0, effect: "・山札の上から2枚を表向きにする。その中から「種族：精霊」を全て手札に加え、残りを好きな順で山札の下に戻す。", evol: false, unique: false, type: "魔法", set: "第1弾", image: "images/Spirit Mythology1.jpg" },
   { id: 35, name: "精霊神 ファーザーズ・ゼウス", cost: 10, tribe: "神", power: 7000, effect: "・ツインアタッカー<br>・手札にあるこのモンスターのコストは場の「精霊」カードの数だけ少なくなる。<br>・登場時、相手は次ターンの終了時まで魔法カードを使うことが出来ない。", evol: false, unique: false, type: "モンスター", set: "第1弾", image: "images/Spirit God Father Zeus.jpg" },
   { id: 36, name: "破壊砲牙龍 ディクラスター・ドラゴン", cost: 10, tribe: "ドラゴン/改造龍機", power: 9000, effect: "・速攻<br>・ツインアタッカー<br>・登場時、お互いはシールドを1枚手札に加える。", evol: false, unique: true, type: "モンスター", set: "第1弾", image: "images/Destruction Fang Dragon Decluster Dragon.jpg" },
-  { id: 37, name: "大爆発", cost: 13, tribe: "-", power: 0, effect: "・カウンター7<br>・場のモンスター全てを破壊する。", evol: false, unique: true, type: "呪文", set: "第1弾", image: "images/Massive explosion.jpg" },
+  { id: 37, name: "大爆発", cost: 13, tribe: "-", power: 0, effect: "・カウンター7<br>・場のモンスター全てを破壊する。", evol: false, unique: true, type: "魔法", set: "第1弾", image: "images/Massive explosion.jpg" },
   { id: 38, name: "秘術師 フィーデン・ニトロ", cost: 5, tribe: "悪魔/マジシャン", power: 5000, effect: "・自分のターン開始時、このモンスターを破壊する。そのあとモンスターが出るまで自分の山札をめくり、それを場に出す。", evol: false, unique: true, type: "モンスター", set: "第1弾", image: "images/Mystic Fiden Nitro.jpg" },
-  { id: 39, name: "剛弾 ファウスト・ガントレット", cost: 4, tribe: "-", power: 0, effect: "・フラッシュカウンター<br>・場の相手カード1枚を破壊する。", evol: false, unique: true, type: "呪文", set: "第1弾", image: "images/Faust Gauntlet.jpg" },
+  { id: 39, name: "剛弾 ファウスト・ガントレット", cost: 4, tribe: "-", power: 0, effect: "・フラッシュカウンター<br>・場の相手カード1枚を破壊する。", evol: false, unique: true, type: "魔法", set: "第1弾", image: "images/Faust Gauntlet.jpg" },
   { id: 40, name: "閉ざされし暗黒の扉", cost: 13, tribe: "悪魔", power: 6666, effect: "・このモンスターは攻撃できない。<br>・自分のターン開始時、このモンスターを破壊する。そのあとカードを5枚引き、手札からコストが8以下の「種族：悪魔」を場に出す。", evol: false, unique: true, type: "モンスター", set: "第1弾", image: "images/The Sealed Door of Darkness.jpg" }
 ];
 
@@ -122,7 +122,7 @@ function renderPool() {
     } else if (typeVal === "ユニーク") {
       matchType = card.unique === true; // 「ユニーク」ならuniqueがtrueのカードだけOK
     } else {
-      matchType = card.type === typeVal; // 「モンスター」「呪文」などなら通常のtypeチェック
+      matchType = card.type === typeVal; // 「モンスター」「魔法」などなら通常のtypeチェック
     }
     // ▲ ここまで変更
 
